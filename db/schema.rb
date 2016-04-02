@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402154042) do
+ActiveRecord::Schema.define(version: 20160402155105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20160402154042) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "state_id",                            null: false
+    t.integer  "age",                                 null: false
+    t.string   "title_position",                      null: false
   end
 
   add_index "profiles", ["email"], name: "index_profiles_on_email", unique: true, using: :btree
@@ -42,4 +45,5 @@ ActiveRecord::Schema.define(version: 20160402154042) do
 
   add_index "states", ["name"], name: "index_states_on_name", unique: true, using: :btree
 
+  add_foreign_key "profiles", "states"
 end

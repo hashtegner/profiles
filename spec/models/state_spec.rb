@@ -8,6 +8,10 @@ RSpec.describe State, type: :model do
     it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many(:profiles).dependent(:restrict_with_error) }
+  end
+
   describe 'table' do
     it { is_expected.to have_db_index(:name).unique(:true) }
   end
