@@ -8,4 +8,5 @@ class Profile < ApplicationRecord
   }
 
   belongs_to :state, optional: false
+  has_many :saved_queries, dependent: :destroy
 end

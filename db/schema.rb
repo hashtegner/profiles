@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402194335) do
+ActiveRecord::Schema.define(version: 20160402214109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 20160402194335) do
   add_index "profiles", ["email"], name: "index_profiles_on_email", unique: true, using: :btree
   add_index "profiles", ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true, using: :btree
 
+  create_table "saved_queries", force: :cascade do |t|
+    t.integer  "profile_id",              null: false
+    t.string   "name",                    null: false
+    t.jsonb    "parameters", default: {}, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "saved_queries", ["parameters"], name: "index_saved_queries_on_parameters", using: :gin
+  add_index "saved_queries", ["profile_id", "name"], name: "index_saved_queries_on_profile_id_and_name", unique: true, using: :btree
+  add_index "saved_queries", ["profile_id"], name: "index_saved_queries_on_profile_id", using: :btree
+
   create_table "states", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
@@ -46,4 +58,5 @@ ActiveRecord::Schema.define(version: 20160402194335) do
   add_index "states", ["name"], name: "index_states_on_name", unique: true, using: :btree
 
   add_foreign_key "profiles", "states"
+  add_foreign_key "saved_queries", "profiles"
 end

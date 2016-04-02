@@ -15,6 +15,7 @@ RSpec.describe Profile, type: :model do
 
   describe 'associations' do
     it { is_expected.to belong_to(:state) }
+    it { is_expected.to have_many(:saved_queries).dependent(:destroy) }
   end
 
   describe 'table' do
