@@ -1,4 +1,7 @@
 pt-BR:
+  errors:
+    messages:
+      not_found: não encontrado
   devise:
     failure:
       profile:
@@ -8,3 +11,6 @@ pt-BR:
       signed_up: Seu cadastro foi efetuado com sucesso
     sessions:
       signed_in: Login efetuado com sucesso
+    passwords:
+      send_instructions: Você receberá um e-mail com as instruções para recuperar sua senha em alguns minutos
+      updated: Sua senha foi alterada com sucesso

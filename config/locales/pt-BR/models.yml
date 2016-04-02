@@ -8,3 +8,4 @@ pt-BR:
         age: Idade
         title_position: Cargo
         state: Estado
+        reset_password_token: Token

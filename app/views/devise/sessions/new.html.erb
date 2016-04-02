@@ -1,6 +1,8 @@
 <h2><%= t('.login') %></h2>
 
 <%= simple_form_for resource, url: session_path(resource_name) do |f| %>
+  <%= devise_error_messages! %>
+
   <%= f.input :email, input_html: {autofocus: true} %>
   <%= f.input :password %>
 

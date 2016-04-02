@@ -1,4 +1,7 @@
 pt-BR:
+  errors:
+    messages:
+      not_saved: Não foi possível salvar as informações
   devise:
     registrations:
       new:
@@ -8,3 +11,17 @@ pt-BR:
       new:
         login: Login
         submit: Entrar
+    passwords:
+      new:
+        recovery_password: Recuperar minha Senha
+        submit: Enviar instruções
+      edit:
+        recovery_password: Alterar minha Senha
+        submit: Alterar
+        new_password: Nova Senha
+        confirm_new_password: Confirme a Nova Senha
+    shared:
+      links:
+        login: Entrar
+        sign_up: Cadastre-se
+        recovery_password: Esqueci minha Senha
