@@ -19,8 +19,8 @@ RSpec.feature 'User sign up' do
 
     select state.name, from: t('activerecord.attributes.profile.state')
 
-    fill_in t('activerecord.attributes.profile.title_position'),
-            with: profile[:title_position]
+    fill_in t('activerecord.attributes.profile.profession'),
+            with: profile[:profession]
 
     click_button t('devise.registrations.new.submit')
 

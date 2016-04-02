@@ -2,7 +2,7 @@ class Profile < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable
 
-  validates :title_position, presence: true
+  validates :profession, presence: true
   validates :age, presence: true, numericality: {
     only_integer: true, greater_than: 0
   }

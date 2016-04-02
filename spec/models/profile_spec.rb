@@ -6,7 +6,7 @@ RSpec.describe Profile, type: :model do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
-    it { is_expected.to validate_presence_of(:title_position) }
+    it { is_expected.to validate_presence_of(:profession) }
     it do
       is_expected.to validate_numericality_of(:age).is_greater_than(0)
         .only_integer

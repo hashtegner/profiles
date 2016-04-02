@@ -6,6 +6,6 @@ pt-BR:
         password: Senha
         password_confirmation: Confirmação da Senha
         age: Idade
-        title_position: Cargo
+        profession: Cargo
         state: Estado
         reset_password_token: Token

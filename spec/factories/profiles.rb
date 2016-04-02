@@ -5,6 +5,6 @@ FactoryGirl.define do
     password_confirmation 'password'
     association :state
     age { rand(16..90) }
-    title_position 'Full Stack Developer'
+    profession 'Full Stack Developer'
   end
 end
