@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User sign up' do
+RSpec.feature 'Login' do
   let(:profile) { create(:profile) }
 
   before { visit new_profile_session_path }
