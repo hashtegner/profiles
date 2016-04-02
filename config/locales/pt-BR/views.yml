@@ -4,3 +4,7 @@ pt-BR:
       new:
         sign_up: Cadastre-se
         submit: Começar
+    sessions:
+      new:
+        login: Login
+        submit: Entrar

@@ -1,4 +1,10 @@
 pt-BR:
   devise:
+    failure:
+      profile:
+        not_found_in_database: 'E-mail ou senha inválido(s)'
+        invalid: 'E-mail ou senha inválido(s)'
     registrations:
-      signed_up: Cadastro efetuado com sucesso
+      signed_up: Seu cadastro foi efetuado com sucesso
+    sessions:
+      signed_in: Login efetuado com sucesso
