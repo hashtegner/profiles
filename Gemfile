@@ -21,6 +21,9 @@ gem 'devise', '~> 4.0.0.rc2'
 # I18n
 gem 'rails-i18n', '>= 5.0.0.beta3'
 
+# Views stuffs
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '>= 3.5.0.beta2'

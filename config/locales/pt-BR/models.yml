@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    attributes:
+      profile:
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação da Senha
+        age: Idade
+        title_position: Cargo
+        state: Estado

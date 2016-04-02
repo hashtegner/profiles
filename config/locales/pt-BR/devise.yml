@@ -1,0 +1,4 @@
+pt-BR:
+  devise:
+    registrations:
+      signed_up: Cadastro efetuado com sucesso

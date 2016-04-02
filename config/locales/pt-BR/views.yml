@@ -1,1 +1,6 @@
 pt-BR:
+  devise:
+    registrations:
+      new:
+        sign_up: Cadastre-se
+        submit: Começar
