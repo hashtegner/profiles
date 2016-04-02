@@ -1,0 +1,32 @@
+Rails:
+  Enabled: true
+
+AllCops:
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/*.rake'
+  Exclude:
+    - Rakefile
+    - config/initializers/**/*
+    - config/environments/**/*
+    - config/puma.rb
+    - db/schema.rb
+    - db/migrate/**/*
+    - bin/**/*
+  TargetRubyVersion: 2.3
+
+Style/Documentation:
+  Enabled: false
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
