@@ -7,11 +7,6 @@ if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
 
-if ENV['COV'].present?
-  require 'simplecov'
-  SimpleCov.start 'rails'
-end
-
 require 'spec_helper'
 require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!

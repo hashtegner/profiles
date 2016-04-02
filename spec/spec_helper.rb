@@ -1,3 +1,8 @@
+if ENV['COV']
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
+
 Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each do |f|
   require f
 end
