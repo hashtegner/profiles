@@ -6,7 +6,7 @@ RSpec.feature 'User sign up' do
 
   before { visit new_profile_registration_path }
 
-  scenario 'With valid parameters' do
+  scenario 'create a new user with valid parameters' do
     fill_in t('activerecord.attributes.profile.email'), with: profile[:email]
 
     fill_in t('activerecord.attributes.profile.password'),
@@ -27,7 +27,7 @@ RSpec.feature 'User sign up' do
     expect(page).to have_text(t('devise.registrations.signed_up'))
   end
 
-  scenario 'With invalid parameters' do
+  scenario 'show errors with invalid parameters' do
     click_button t('devise.registrations.new.submit')
 
     expect(page).to have_text(
