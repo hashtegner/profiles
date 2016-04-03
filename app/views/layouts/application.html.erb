@@ -4,14 +4,29 @@
     <title>Profiles</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Source+Sans:300,700,900', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <p class="<%= key %>"><%= value %></p>
-    <% end %>
-    <%= yield %>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to root_path, class: 'navbar-brand navbar__logo' do %>
+            Profiles
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <%= render 'shared/flash_messages' %>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

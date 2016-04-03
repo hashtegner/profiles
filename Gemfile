@@ -14,6 +14,7 @@ gem 'therubyracer', platforms: :ruby
 # Frontend stuffs
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 # Auth
 gem 'devise', '~> 4.0.0.rc2'

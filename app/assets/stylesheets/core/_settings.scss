@@ -1,0 +1,19 @@
+$base-font-family: 'Source Sans', sans-serif;
+$body-bg: #f8f8f8;
+
+// Bootstrap overrides
+
+$brand-primary: #2C82C9;
+$brand-success: #2CC990;
+$brand-danger: #FC6042;
+
+$state-danger-bg: $brand-danger;
+$state-danger-text: $brand-danger;
+
+$state-info-bg: $brand-primary;
+$state-info-text: $brand-primary;
+
+$alert-danger-text: white;
+$alert-info-text: white;
+
+$border-radius-base: 0;

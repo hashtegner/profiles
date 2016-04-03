@@ -27,8 +27,10 @@ pt-BR:
         recovery_password: Esqueci minha Senha
 
   views:
+    wait: 'Aguarde...'
     pagination:
       next: Próxima
       last: Última
       first: Primeira
       previous: Anterior
+      truncate: '...'

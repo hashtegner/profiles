@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
 
   def search
     query = ProfilesByCriteriaQuery.new(Profile, params[:criteria] || {})
+    query = query.by_criteria.includes(:state).ordered
 
-    @profiles = query.by_criteria.ordered.page(params[:page])
+    @profiles = query.page(params[:page])
   end
 end

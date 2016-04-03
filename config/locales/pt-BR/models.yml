@@ -1,5 +1,10 @@
 pt-BR:
   activerecord:
+    models:
+      profile:
+        one: Perfil
+        other: Perfis
+
     attributes:
       profile:
         email: E-mail
@@ -9,3 +14,4 @@ pt-BR:
         profession: Cargo
         state: Estado
         reset_password_token: Token
+        remember_me: Lembrar senha

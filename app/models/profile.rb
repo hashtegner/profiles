@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  paginates_per 15
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable
 

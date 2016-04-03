@@ -1,0 +1,28 @@
+$logo_size: 42px;
+$logo: 'icon-42x42.png';
+$logo_color: black;
+
+.navbar {
+  padding-top: 20px;
+  border: 0;
+}
+
+.navbar-brand.navbar__logo {
+  position: relative;
+  padding-left: $logo_size + 30;
+
+  color: $logo_color;
+  font-weight: bold;
+}
+.navbar__logo:before {
+  display: inline-block;
+  content: "";
+  width: $logo_size;
+  height: $logo_size;
+
+  position: absolute;
+  left: 15px;
+  top: 0;
+
+  background: image_url($logo);
+}
