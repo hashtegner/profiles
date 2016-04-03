@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
   protected
 
   def criteria_params
-    @criteria_params ||= params[:criteria] || {}
+    @criteria_params ||= params[:criteria].try(:to_unsafe_h) || {}
   end
 
   helper_method :criteria_params

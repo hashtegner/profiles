@@ -12,6 +12,7 @@ pt-BR:
       job_title_criteria: Cargo
       state_id_criteria: Estado
       clear: Limpar
+      save: Salvar
       criteria_options:
         equals: Igual a
         not_equal: Diferente de
@@ -47,6 +48,7 @@ pt-BR:
         recovery_password: Esqueci minha Senha
 
   views:
+    cancel: Cancelar
     wait: 'Aguarde...'
     pagination:
       next: Próxima

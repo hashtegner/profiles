@@ -8,13 +8,6 @@ RSpec.feature 'Search Profiles' do
     let!(:profile_2) { create(:profile, email: 'ben@example.com', age: 22) }
     let!(:profile_3) { create(:profile, email: 'carlos@example.com', age: 22) }
 
-    let!(:saved_query) do
-      create(:saved_query,
-             profile: current_profile,
-             parameters: {match: 'all', age_criteria: 'equals', age_value: 12}
-            )
-    end
-
     before { sign_in current_profile }
 
     scenario 'load profiles by params criteria' do

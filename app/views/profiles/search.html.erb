@@ -6,6 +6,23 @@
       </div>
       <div class="panel-body">
         <%= render 'search_form' %>
+        <hr>
+        <% if current_profile.saved_queries.any? %>
+          <h6>Suas Segmentações</h6>
+          <% current_profile.saved_queries.each do |query| %>
+            <ul class="nav nav-stacked nav-pills">
+
+              <li class="<%= 'active' if params[:saved_query_id].to_i == query.id %>">
+                <%= link_to query.safe_parameters.merge(controller: :profiles,
+                                                        action: :search,
+                                                        saved_query_id: query.id) do %>
+                  <%= query.name %>
+                <% end %>
+              </li>
+            </ul>
+
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -19,9 +36,11 @@
         <%= render 'collection', profiles: @profiles %>
       </div>
 
-      <div class="panel-footer">
-        <%= paginate @profiles %>
-      </div>
+      <% if @profiles.total_pages > 1 %>
+        <div class="panel-footer">
+          <%= paginate @profiles %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

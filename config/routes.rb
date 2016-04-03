@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   controller :profiles do
     get :search
   end
+
+  resources :saved_queries, only: [:new, :create]
 end

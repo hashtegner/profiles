@@ -16,11 +16,32 @@ RSpec.describe SavedQuery, type: :model do
     it { is_expected.to belong_to(:profile) }
   end
 
-  describe 'serializers' do
-    it { is_expected.to serialize(:parameters).as(JSON) }
-  end
-
   describe 'table' do
     it { is_expected.to have_db_index([:profile_id, :name]).unique(:true) }
+  end
+
+  describe '#safe_parameters' do
+    context 'with malicious parameters' do
+      before { subject.parameters = 'javascript: alert(1)' }
+
+      it do
+        expect(subject.safe_parameters).to eql('javascript: alert(1)' => nil)
+      end
+    end
+
+    context 'with empty parameters' do
+      before { subject.parameters = '' }
+
+      it { expect(subject.safe_parameters).to be_empty }
+    end
+
+    context 'with valid parameters' do
+      before { subject.parameters = 'foo=hello&bar=world' }
+
+      it do
+        expect(subject.safe_parameters).to eql('foo' => 'hello',
+                                               'bar' => 'world')
+      end
+    end
   end
 end

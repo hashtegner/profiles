@@ -4,6 +4,10 @@ pt-BR:
       profile:
         one: Perfil
         other: Perfis
+      saved_query:
+        one: Segmentação
+        other: Segmentações
+
 
     attributes:
       profile:
@@ -15,3 +19,5 @@ pt-BR:
         state: Estado
         reset_password_token: Token
         remember_me: Lembrar senha
+      saved_query:
+        name: Nome
