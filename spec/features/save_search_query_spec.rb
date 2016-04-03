@@ -40,11 +40,7 @@ RSpec.feature 'Save search query' do
     end
   end
 
-  context 'unauthenticated' do
-    scenario 'redirect to login path' do
-      visit new_saved_query_path
-
-      expect(current_path).to eql(new_profile_session_path)
-    end
+  it_behaves_like 'unauthenticated' do
+    let(:path) { new_saved_query_path }
   end
 end

@@ -10,6 +10,7 @@ pt-BR:
         unauthenticated: 'Por favor, faça o login'
     registrations:
       signed_up: Seu cadastro foi efetuado com sucesso
+      updated: Seu cadastro foi atualizado com sucesso
     sessions:
       signed_in: Login efetuado com sucesso
     passwords:

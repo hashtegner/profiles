@@ -48,8 +48,10 @@ pt-BR:
         recovery_password: Esqueci minha Senha
 
   views:
+    edit_profile: Editar meu perfil
     cancel: Cancelar
     wait: 'Aguarde...'
+    sign_out: Sair
     pagination:
       next: Próxima
       last: Última

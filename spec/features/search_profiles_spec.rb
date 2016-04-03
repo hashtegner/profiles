@@ -43,11 +43,7 @@ RSpec.feature 'Search Profiles' do
     end
   end
 
-  context 'unauthenticated' do
-    scenario 'redirect to login path' do
-      visit search_path
-
-      expect(current_path).to eql(new_profile_session_path)
-    end
+  it_behaves_like 'unauthenticated' do
+    let(:path) { search_path }
   end
 end

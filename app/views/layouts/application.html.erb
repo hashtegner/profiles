@@ -16,7 +16,22 @@
           <%= link_to root_path, class: 'navbar-brand' do %>
             Profiles
           <% end %>
+
         </div>
+
+        <% if profile_signed_in? %>
+          <div class="pull-right">
+            <%= link_to edit_profile_registration_path, class: 'navbar-btn btn btn-default' do %>
+              <i class="glyphicon glyphicon-user"></i>
+              <%= t('views.edit_profile') %>
+            <% end %>
+            <%= link_to destroy_profile_session_path, class: 'navbar-btn btn btn-default',
+                                                      method: :delete do %>
+              <i class="glyphicon glyphicon-log-out"></i>
+              <%= t('views.sign_out') %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </nav>
 

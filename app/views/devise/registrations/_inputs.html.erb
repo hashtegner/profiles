@@ -1,0 +1,14 @@
+<%= form.error_notification %>
+<%= form.input :email %>
+<%= form.input :password %>
+<%= form.input :password_confirmation %>
+<hr>
+<div class="row">
+  <div class="col-sm-6">
+    <%= form.association :state %>
+  </div>
+  <div class="col-sm-6">
+    <%= form.input :age %>
+  </div>
+</div>
+<%= form.input :job_title %>

@@ -8,7 +8,6 @@ pt-BR:
         one: Segmentação
         other: Segmentações
 
-
     attributes:
       profile:
         email: E-mail
@@ -19,5 +18,6 @@ pt-BR:
         state: Estado
         reset_password_token: Token
         remember_me: Lembrar senha
+        current_password: Senha Atual
       saved_query:
         name: Nome
