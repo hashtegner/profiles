@@ -30,7 +30,7 @@ class ProfilesByCriteriaQuery
 
   # rubocop:disable Metrics/MethodLength
   def by_criteria
-    fragments, arguments = []
+    fragments = []
     arguments = []
 
     permitted_fields.each do |field|
