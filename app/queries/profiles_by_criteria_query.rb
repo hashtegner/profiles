@@ -9,6 +9,9 @@ class ProfilesByCriteriaQuery
     in: 'in (?)'
   }.freeze
 
+  NUMBERS = %i(equals greater_than less_than).freeze
+  STRINGS = %i(equals not_equal contains not_contains).freeze
+
   MATCH = {
     all: ' AND ',
     any: ' OR '
@@ -50,10 +53,12 @@ class ProfilesByCriteriaQuery
   protected
 
   def extract_query(field_name)
-    criteria = CONDITIONS[options[:"#{field_name}_criteria"].to_s.to_sym]
+    criteria_name = options[:"#{field_name}_criteria"].to_s.to_sym
+    criteria = CONDITIONS[criteria_name]
     value = options[:"#{field_name}_value"]
+    value = value.reject(&:blank?) if value.is_a?(Array)
 
-    return nil unless criteria.present?
+    return nil unless criteria.present? && value.present?
 
     condition = [field_name, criteria].join(' ')
 

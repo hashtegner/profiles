@@ -1,0 +1,63 @@
+<%= simple_form_for :criteria, method: :get do |f| %>
+
+  <%= f.input :match, collection: search_match_options,
+                      selected: criteria_params[:match],
+                      include_blank: false,
+                      required: false,
+                      label: t('.match') %>
+
+  <div class="form-group">
+    <%= f.label t('.age_criteria'), for: :criteria_age_criteria, required: false %>
+
+    <div class="row">
+      <div class="col-sm-5">
+        <%= f.input :age_criteria, collection: search_integer_options,
+                                   selected: criteria_params[:age_criteria],
+                                   label: false,
+                                   wrapper: false %>
+      </div>
+
+      <div class="col-sm-7">
+        <%= f.input :age_value, as: :integer, label: false, wrapper: false,
+                                input_html: {value: criteria_params[:age_value]} %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t('.job_title_criteria'), for: :criteria_job_title_criteria,
+                                          required: false %>
+
+    <div class="row">
+      <div class="col-sm-5">
+        <%= f.input :job_title_criteria,
+                     collection: search_string_options,
+                     label: false,
+                     selected: criteria_params[:job_title_criteria],
+                     wrapper: false %>
+      </div>
+
+      <div class="col-sm-7">
+        <%= f.input :job_title_value,
+                    label: false,
+                    wrapper: false,
+                    input_html: {value: criteria_params[:job_title_value]} %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t('.state_id_criteria'), for: :criteria_state_id_value,
+                                         required: false %>
+
+    <%= f.hidden_field :state_id_criteria, value: 'in' %>
+
+    <%= f.input :state_id_value, collection: State.all, as: :select,
+                                 selected: criteria_params[:state_id_value],
+                                 label: false, wrapper: false,
+                                 input_html: {multiple: true} %>
+  </div>
+
+  <%= f.button :submit, t('.submit'), data: {disable_with: t('views.wait')} %>
+  <%= link_to t('.clear'), action: :search %>
+<% end %>

@@ -81,7 +81,7 @@ describe ProfilesByCriteriaQuery do
 
   describe 'state in' do
     let(:options) do
-      {state_id_criteria: 'in', state_id_value: [state_3.id, state_1.id]}
+      {state_id_criteria: 'in', state_id_value: ['', state_3.id, state_1.id]}
     end
 
     it { is_expected.to match_array([profile_1, profile_3, profile_4]) }

@@ -7,14 +7,14 @@ $logo_color: black;
   border: 0;
 }
 
-.navbar-brand.navbar__logo {
+.navbar-default .navbar-brand {
   position: relative;
   padding-left: $logo_size + 30;
 
   color: $logo_color;
   font-weight: bold;
 }
-.navbar__logo:before {
+.navbar-brand:before {
   display: inline-block;
   content: "";
   width: $logo_size;

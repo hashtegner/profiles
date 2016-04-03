@@ -2,6 +2,26 @@ pt-BR:
   errors:
     messages:
       not_saved: Não foi possível salvar as informações
+  profiles:
+    collection:
+      empty: Nenhum perfil encontrado
+    search_form:
+      submit: Pesquisar
+      match: Segmentar perfis que atendam
+      age_criteria: Idade
+      job_title_criteria: Cargo
+      state_id_criteria: Estado
+      clear: Limpar
+      criteria_options:
+        equals: Igual a
+        not_equal: Diferente de
+        contains: Contém
+        not_contains: Não Contém
+        greater_than: Maior que
+        less_than: Menor que
+      match_options:
+        any: Qualquer uma das condições
+        all: Todas as condições
   devise:
     registrations:
       new:
