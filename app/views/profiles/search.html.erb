@@ -1,0 +1,11 @@
+<table>
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @profiles %>

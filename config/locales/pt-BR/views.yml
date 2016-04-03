@@ -25,3 +25,10 @@ pt-BR:
         login: Entrar
         sign_up: Cadastre-se
         recovery_password: Esqueci minha Senha
+
+  views:
+    pagination:
+      next: Próxima
+      last: Última
+      first: Primeira
+      previous: Anterior

@@ -1,6 +1,8 @@
 if ENV['COV']
   require 'simplecov'
-  SimpleCov.start 'rails'
+  SimpleCov.start 'rails' do
+    add_group 'Queries', 'app/queries'
+  end
 end
 
 Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each do |f|
@@ -16,5 +18,5 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.include I18nMacros
+  config.include I18nHelpers
 end

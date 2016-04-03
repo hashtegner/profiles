@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :profiles, controllers: {registrations: :registrations}
 
-  root 'criterias#index'
+  root 'profiles#index'
+
+  controller :profiles do
+    get :search
+  end
 end

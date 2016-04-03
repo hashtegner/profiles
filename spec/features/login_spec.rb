@@ -6,11 +6,7 @@ RSpec.feature 'Login' do
   before { visit new_profile_session_path }
 
   scenario 'authenticate user with valid credentials' do
-    fill_in t('activerecord.attributes.profile.email'), with: profile.email
-    fill_in t('activerecord.attributes.profile.password'),
-            with: profile.password
-
-    click_button t('devise.sessions.new.submit')
+    sign_in profile
 
     expect(page).to have_text(t('devise.sessions.signed_in'))
   end

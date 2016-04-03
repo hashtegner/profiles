@@ -38,14 +38,13 @@ ActiveRecord::Schema.define(version: 20160402214109) do
   add_index "profiles", ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true, using: :btree
 
   create_table "saved_queries", force: :cascade do |t|
-    t.integer  "profile_id",              null: false
-    t.string   "name",                    null: false
-    t.jsonb    "parameters", default: {}, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "profile_id", null: false
+    t.string   "name",       null: false
+    t.text     "parameters", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "saved_queries", ["parameters"], name: "index_saved_queries_on_parameters", using: :gin
   add_index "saved_queries", ["profile_id", "name"], name: "index_saved_queries_on_profile_id_and_name", unique: true, using: :btree
   add_index "saved_queries", ["profile_id"], name: "index_saved_queries_on_profile_id", using: :btree
 

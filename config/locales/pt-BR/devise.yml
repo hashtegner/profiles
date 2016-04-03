@@ -7,6 +7,7 @@ pt-BR:
       profile:
         not_found_in_database: 'E-mail ou senha inválido(s)'
         invalid: 'E-mail ou senha inválido(s)'
+        unauthenticated: 'Por favor, faça o login'
     registrations:
       signed_up: Seu cadastro foi efetuado com sucesso
     sessions:

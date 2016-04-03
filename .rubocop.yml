@@ -14,6 +14,7 @@ AllCops:
     - db/schema.rb
     - db/migrate/**/*
     - bin/**/*
+    - spec/support/shoulda.rb
   TargetRubyVersion: 2.3
 
 Style/Documentation:

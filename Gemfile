@@ -23,6 +23,11 @@ gem 'rails-i18n', '>= 5.0.0.beta3'
 
 # Views stuffs
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'kaminari', github: 'amatsuda/kaminari', branch: '0-17-stable'
+
+# Seed stuffs
+gem 'seedbank', '~> 0.3.0'
+gem 'faker', '~> 1.6', '>= 1.6.3', require: false
 
 group :development, :test do
   gem 'byebug'

@@ -5,6 +5,7 @@ RSpec.describe SavedQuery, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:parameters) }
     it do
       is_expected.to validate_uniqueness_of(:name).scoped_to(:profile_id)
         .case_insensitive
@@ -15,8 +16,11 @@ RSpec.describe SavedQuery, type: :model do
     it { is_expected.to belong_to(:profile) }
   end
 
+  describe 'serializers' do
+    it { is_expected.to serialize(:parameters).as(JSON) }
+  end
+
   describe 'table' do
     it { is_expected.to have_db_index([:profile_id, :name]).unique(:true) }
-    it { is_expected.to have_db_index(:parameters) }
   end
 end

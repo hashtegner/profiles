@@ -9,4 +9,6 @@ class Profile < ApplicationRecord
 
   belongs_to :state, optional: false
   has_many :saved_queries, dependent: :destroy
+
+  scope :ordered, -> { order(email: :asc) }
 end
