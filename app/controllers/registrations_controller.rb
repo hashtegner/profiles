@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     devise_parameter_sanitizer.permit(:sign_up,
-                                      keys: %i(age state_id profession))
+                                      keys: %i(age state_id job_title))
 
     super
   end

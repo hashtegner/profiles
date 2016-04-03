@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160402214109) do
     t.datetime "updated_at",                          null: false
     t.integer  "state_id",                            null: false
     t.integer  "age",                                 null: false
-    t.string   "profession",                          null: false
+    t.string   "job_title",                           null: false
   end
 
   add_index "profiles", ["email"], name: "index_profiles_on_email", unique: true, using: :btree

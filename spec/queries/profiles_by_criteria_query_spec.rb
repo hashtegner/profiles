@@ -8,19 +8,19 @@ describe ProfilesByCriteriaQuery do
   let!(:profile_1) do
     create(:profile, age: 12,
                      state: state_1,
-                     profession: 'full stack developer')
+                     job_title: 'full stack developer')
   end
 
   let!(:profile_2) do
-    create(:profile, age: 20, state: state_2, profession: 'designer')
+    create(:profile, age: 20, state: state_2, job_title: 'designer')
   end
 
   let!(:profile_3) do
-    create(:profile, age: 17, state: state_3, profession: 'ux')
+    create(:profile, age: 17, state: state_3, job_title: 'ux')
   end
 
   let!(:profile_4) do
-    create(:profile, age: 32, state: state_3, profession: 'developer')
+    create(:profile, age: 32, state: state_3, job_title: 'developer')
   end
 
   let(:options) { {} }
@@ -39,25 +39,25 @@ describe ProfilesByCriteriaQuery do
     end
   end
 
-  describe 'profession equals' do
+  describe 'job_title equals' do
     let(:options) do
-      {profession_criteria: 'equals', profession_value: 'developer'}
+      {job_title_criteria: 'equals', job_title_value: 'developer'}
     end
 
     it { is_expected.to match_array([profile_4]) }
   end
 
-  describe 'profession contains' do
+  describe 'job_title contains' do
     let(:options) do
-      {profession_criteria: 'contains', profession_value: '%developer'}
+      {job_title_criteria: 'contains', job_title_value: '%developer'}
     end
 
     it { is_expected.to match_array([profile_1, profile_4]) }
   end
 
-  describe 'profession not contains' do
+  describe 'job_title not contains' do
     let(:options) do
-      {profession_criteria: 'not_contains', profession_value: '%developer'}
+      {job_title_criteria: 'not_contains', job_title_value: '%developer'}
     end
 
     it { is_expected.to match_array([profile_2, profile_3]) }
@@ -88,28 +88,28 @@ describe ProfilesByCriteriaQuery do
   end
 
   context 'match all' do
-    describe 'age greater_than and profession contains' do
+    describe 'age greater_than and job_title contains' do
       let(:options) do
         {
           match: :all,
           age_criteria: 'greater_than',
           age_value: 19,
-          profession_criteria: 'contains',
-          profession_value: '%developer'
+          job_title_criteria: 'contains',
+          job_title_value: '%developer'
         }
       end
 
       it { is_expected.to match_array([profile_4]) }
     end
 
-    describe 'age greater_than, profession contains and state in' do
+    describe 'age greater_than, job_title contains and state in' do
       let(:options) do
         {
           match: :all,
           age_criteria: 'greater_than',
           age_value: 11,
-          profession_criteria: 'contains',
-          profession_value: '%developer',
+          job_title_criteria: 'contains',
+          job_title_value: '%developer',
           state_id_criteria: 'in',
           state_id_value: state_1.id
         }
@@ -120,14 +120,14 @@ describe ProfilesByCriteriaQuery do
   end
 
   context 'match any' do
-    describe 'age greater_than or profession contains' do
+    describe 'age greater_than or job_title contains' do
       let(:options) do
         {
           match: :any,
           age_criteria: 'greater_than',
           age_value: 20,
-          profession_criteria: 'contains',
-          profession_value: '%developer'
+          job_title_criteria: 'contains',
+          job_title_value: '%developer'
         }
       end
 

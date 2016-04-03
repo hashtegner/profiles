@@ -8,7 +8,7 @@
         <tr>
           <th><%= Profile.human_attribute_name(:email) %></th>
           <th><%= Profile.human_attribute_name(:state) %></th>
-          <th><%= Profile.human_attribute_name(:profession) %></th>
+          <th><%= Profile.human_attribute_name(:job_title) %></th>
           <th><%= Profile.human_attribute_name(:age) %></th>
         </tr>
       </thead>
@@ -17,7 +17,7 @@
           <tr>
             <td><%= profile.email %></td>
             <td><%= profile.state.name %></td>
-            <td><%= profile.profession %></td>
+            <td><%= profile.job_title %></td>
             <td><%= profile.age %></td>
           </tr>
         <% end %>

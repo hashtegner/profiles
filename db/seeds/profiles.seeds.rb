@@ -9,7 +9,7 @@ after :states do
     Profile.where(email: Faker::Internet.email).first_or_create(
       age: rand(16..85),
       state_id: state.sample,
-      profession: Faker::Company.profession,
+      job_title: Faker::Company.profession,
       password: 'password',
       password_confirmation: 'password'
     )

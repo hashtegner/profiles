@@ -25,7 +25,7 @@ class ProfilesByCriteriaQuery
   end
 
   def permitted_fields
-    @fields = %w(age profession state_id)
+    @fields = %w(age job_title state_id)
   end
 
   # rubocop:disable Metrics/MethodLength
