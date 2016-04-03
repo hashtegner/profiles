@@ -33,6 +33,7 @@ gem 'faker', '~> 1.6', '>= 1.6.3', require: false
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '>= 3.5.0.beta2'
+  gem 'dotenv-rails'
 end
 
 group :development do
