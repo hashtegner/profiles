@@ -20,3 +20,5 @@ coverage
 
 .env.local
 .env.production
+
+config/database.yml
