@@ -48,8 +48,8 @@ Ao fazer isso, todas segmentações que impactam no seu perfil, serão refletida
 
 ## Links
 
-- A aplicação pode ser acessada e utilizada no seguinte link: http://prfiles.herokuapp.com.
-- As instruções de instalação e código fonte estão disponíveis no seguinte repositório: http://github.com/alesshh/profiles.
+- A aplicação pode ser acessada e utilizada no seguinte link: https://prfiles.herokuapp.com.
+- As instruções de instalação e código fonte estão disponíveis no seguinte repositório: https://github.com/alesshh/profiles.
 
 ## Créditos
 Autor: [Alessandro Tegner](mailto:alessandro.tegner@gmail.com)
